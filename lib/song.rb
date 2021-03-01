@@ -20,7 +20,7 @@ def self.new_by_filename(filename)
   file_parsed = filename.split(/ - (.+) - (.+).mp3/)
 
   song = Song.new(file_parsed[1])
-  song.artist = Artist.find_or_create_by_name(file_parsed[0])
+  song.artist = artist_name(file_parsed[0])
   song
 end
 
